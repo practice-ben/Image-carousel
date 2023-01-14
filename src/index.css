@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: 300px;
   width: 100vw;
   height: 100vh;
   padding: 20px;
@@ -19,6 +20,9 @@ body {
 .image-container {
   width: 70%;
   margin: auto;
+  z-index: 2;
+  /* margin-top: 200px; */
+  position: relative;
 }
 
 .image {
@@ -31,6 +35,7 @@ body {
   font-weight: 600;
   padding: 20px;
   border-radius: 50%;
+  /* top: 50%; */
 }
 .button:hover {
   background-color: rgba(3, 3, 3, 0.3);
@@ -43,4 +48,19 @@ body {
 }
 .next {
   right: 20px;
+}
+
+
+@media (max-width: 500px) {
+  body {
+    padding: 20px 5px;
+  }
+  .button {
+    padding: 10px;
+  }
+  .image-container {
+    rotate: 90deg;
+    width: 100%;
+    margin-top: 150px;
+  }
 }
