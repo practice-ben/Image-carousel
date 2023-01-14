@@ -3,3 +3,44 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: red;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.image-container {
+  width: 70%;
+  margin: auto;
+}
+
+.image {
+  width: 100%;
+}
+
+.button {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 20px;
+  border-radius: 50%;
+}
+.button:hover {
+  background-color: rgba(3, 3, 3, 0.3);
+}
+.button:active {
+  color: aqua;
+}
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}

@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function App() {
-  const [image, setImage] = React.useState("https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+  const [image, setImage] = React.useState("https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+  const [index, setIndex] = React.useState(0);
 
   const imageArr = [
     "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -16,16 +18,34 @@ export default function App() {
     "https://images.pexels.com/photos/281000/pexels-photo-281000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ]
 
+  function next() {
+    if(index === imageArr.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex(prev => prev += 1);
+    }
+    setImage(imageArr[index]);
+  }
+  function prev() {
+    if(index === 0) {
+      setIndex(imageArr.length - 1);
+    } else {
+      setIndex(prev => prev -= 1);
+    }
+    setImage(imageArr[index]);
+  }
+
+
   return(
     <div className="container">
       <h1>Image Carousel</h1>
       <div className="image-container">
-        <img src={image} alt="" />
+        <img src={image} alt="" className="image"/>
       </div>
-      <div className="button">
-        <i class="fa-solid fa-arrow-left"></i>
+      <div className="prev button" onClick={prev}>
+        <i className="fa-solid fa-arrow-left"></i>
       </div>
-      <div className="button">
+      <div className="next button" onClick={next}>
         <i className="fa-solid fa-arrow-right"></i>
         </div>
     </div>
